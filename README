@@ -1,0 +1,43 @@
+Module input_sequence_reader reads input sequences having header information plus a series of 
+operations. The fields listed below can be listed in any order, with the following exceptions:
+
+Comment lines come directly after the line indicating how many comment lines there are.
+Operation lines come directly after the line indicating how many operation lines there are.
+Operation lines have two, three, or four columns depending on whether they contain feedback and indexes
+
+FALSE = 0
+TRUE = 1
+FAILURE = 0
+SUCCESS = 1
+READ = 0
+WRITE = 1
+DELETE = 2
+EVICT = 3
+
+=============================================
+<has_feedback> as int in {TRUE,FALSE}
+<has_indexes> as int in {TRUE,FALSE}
+<is_artificial_feedback> as int in {TRUE,FALSE}
+<max_key> as int64_t
+<capacity> as int64_t
+<max_load> as int64_t
+<deletions_enabled> as int in {TRUE,FALSE}
+<num_comments> as int
+<comment_0> as data not to be processed
+<comment_1>
+<comment_2>
+    .
+    .
+    .
+<comment_n-1>
+<num_operations> as int64_t
+<operation_0> <key_0> <result_0> <index_0> as int in {READ,WRITE,DELETE,EVICT}, as int64_t, as int in {SUCCESS,FAILURE}, as int64_t
+<operation_1> <key_1> <result_1> <index_1>
+<operation_2> <key_2> <result_2> <index_2>
+<operation_3> <key_3> <result_3> <index_3>
+     .           .        .          .
+     .           .        .          .
+     .           .        .          .
+<operation_n-1> <key_n-1> <result_n-1> <index_n-1>
+=============================================
+
