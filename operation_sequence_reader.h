@@ -34,9 +34,9 @@ extern "C" {
         int64_t * operation;
         int64_t * key;
         int64_t * index;
-        int * result;
+        int * expected_result;
     } operation_sequence;
-
+    operation_sequence * read_operation_sequence(char fname[200]);
 
 #ifdef __cplusplus
 }

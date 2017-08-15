@@ -65,7 +65,7 @@ operation_sequence * read_operation_sequence(char fname[200]){
                 exit(EXIT_FAILURE);                
             }
             if(os->has_feedback){
-                if((os->result = (int *)calloc(os->num_operations, sizeof(int)))==NULL){
+                if((os->expected_result = (int *)calloc(os->num_operations, sizeof(int)))==NULL){
                     printf("Could not allocate memory for result\n");
                     exit(EXIT_FAILURE);                
                 }
@@ -79,11 +79,11 @@ operation_sequence * read_operation_sequence(char fname[200]){
             if(os->has_feedback){
                 if(os->has_indexes){
                     for(g=0; g<os->num_operations; g++){
-                        n = fscanf(fp, "%ld %ld %d %ld", &os->operation[g], &os->key[g], &os->result[g], &os->index[g]);
+                        n = fscanf(fp, "%ld %ld %d %ld", &os->operation[g], &os->key[g], &os->expected_result[g], &os->index[g]);
                     }
                 } else {
                     for(g=0; g<os->num_operations; g++){
-                        n = fscanf(fp, "%ld %ld %d", &os->operation[g], &os->key[g], &os->result[g]);
+                        n = fscanf(fp, "%ld %ld %d", &os->operation[g], &os->key[g], &os->expected_result[g]);
                     }                    
                 }
             } else {
