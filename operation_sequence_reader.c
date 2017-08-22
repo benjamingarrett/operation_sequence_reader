@@ -26,7 +26,7 @@ operation_sequence * read_operation_sequence(char fname[200]){
     os->has_feedback = FALSE;
     os->has_indexes = FALSE;
     while((n = fscanf(fp, "%s", buf)) != EOF){
-        printf("Processing >%s<\n", buf);
+//        printf("Processing >%s<\n", buf);
         if(strcmp("HAS_FEEDBACK",buf)==0){
             n = fscanf(fp, "%d", (int *)&os->has_feedback);
             buf[0] = 0;
