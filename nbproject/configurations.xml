@@ -13,7 +13,6 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>main.c</itemPath>
       <itemPath>operation_sequence_reader.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -41,8 +40,6 @@
           <standard>10</standard>
         </cTool>
       </compileType>
-      <item path="main.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="operation_sequence_reader.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="operation_sequence_reader.h" ex="false" tool="3" flavor2="0">
@@ -69,8 +66,6 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="main.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="operation_sequence_reader.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="operation_sequence_reader.h" ex="false" tool="3" flavor2="0">
