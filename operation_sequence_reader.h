@@ -18,25 +18,26 @@
 extern "C" {
 #endif
 
-    #include<stdint.h>
-    #include<stdio.h>
-    #include<stdlib.h>
-    #include<string.h>
-    typedef struct {
-        int has_feedback;
-        int has_indexes;
-        int is_artificial_feedback;
-        int deletions_enabled;
-        int64_t num_operations;
-        int64_t max_key;
-        int64_t capacity;
-        int64_t max_load;
-        int64_t * operation;
-        int64_t * key;
-        int64_t * index;
-        int * expected_result;
-    } operation_sequence;
-    operation_sequence * read_operation_sequence(char fname[200]);
+#include<stdint.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+  typedef struct {
+    int has_feedback;
+    int has_indexes;
+    int is_artificial_feedback;
+    int deletions_enabled;
+    int64_t num_operations;
+    int64_t max_key;
+    int64_t capacity;
+    int64_t max_load;
+    int64_t * operation;
+    int64_t * key;
+    int64_t * index;
+    int * expected_result;
+  } operation_sequence;
+  operation_sequence * read_operation_sequence(char fname[200]);
 
 #ifdef __cplusplus
 }
