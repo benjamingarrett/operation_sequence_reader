@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   operation_sequence_reader.h
  * Author: benjamin
@@ -17,11 +11,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-#include<stdint.h>
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
 
   typedef struct {
     int has_feedback;
