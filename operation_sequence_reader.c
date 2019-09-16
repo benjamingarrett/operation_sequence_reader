@@ -18,8 +18,8 @@ operation_sequence * read_operation_sequence(char fname[200]){
     fprintf(stderr,"Could not allocate memory for operation sequence\n");
     exit(EXIT_FAILURE);
   }
-  os->has_feedback = FALSE;
-  os->has_indexes = FALSE;
+  os->has_feedback = 0;
+  os->has_indexes = 0;
   while((n = fscanf(fp, "%s", buf)) != EOF){
     //        printf("Processing >%s<\n", buf);
     if(strcmp("HAS_FEEDBACK", buf) == 0){
@@ -81,12 +81,12 @@ operation_sequence * read_operation_sequence(char fname[200]){
             n = fscanf(fp, "%ld %ld %d", &os->operation[g], &os->key[g], &os->expected_result[g]);
           }
         }
-      } else {
-        if (os->has_indexes) {
-          printf("Format error: sequence cannot have indexes without feedback\n");
+      }else{
+        if(os->has_indexes){
+          fprintf(stderr,"Format error: sequence cannot have indexes without feedback\n");
           exit(EXIT_FAILURE);
-        } else {
-          for (g = 0; g < os->num_operations; g++) {
+        }else{
+          for(g = 0; g < os->num_operations; g++){
             n = fscanf(fp, "%ld %ld", &os->operation[g], &os->key[g]);
           }
         }
